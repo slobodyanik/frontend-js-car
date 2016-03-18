@@ -8,12 +8,8 @@ module.exports = function (grunt) {
 		watch: {
 			sources: {
 				files: [
-					SRC_DIR + '/**/*.js',
-					SRC_DIR + '/**/*.css',
-					SRC_DIR + '/**/*.html',
-					TEST_DIR + '/**/*.js',
-					TEST_DIR + '/**/*.css',
-					TEST_DIR + '/**/*.html'
+					SRC_DIR + '/**/*.*',
+					TEST_DIR + '/**/*.*'
 				],
 				//tasks: ['jshint'],
 				options: {
