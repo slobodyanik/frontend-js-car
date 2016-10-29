@@ -1,3 +1,3 @@
 cd ..
-call grunt test
+call npm test
 pause

@@ -1,2 +1,2 @@
 cd ..
-grunt live
+call npm run live

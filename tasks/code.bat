@@ -1,3 +1,3 @@
 cd ..
-call grunt code
+call npm run code
 pause

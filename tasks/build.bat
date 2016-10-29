@@ -1,2 +1,2 @@
 cd ..
-call grunt build
+call npm run build

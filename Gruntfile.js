@@ -1,8 +1,7 @@
 module.exports = function (grunt) {
-	var SRC_DIR = 'src',
-		TEST_DIR = 'test',
-		BUILD_DIR = 'build',
-        TASKS_DIR = 'tasks';
+	var SRC_DIR = 'src'
+	var TEST_DIR = 'test'
+	var BUILD_DIR = 'build'
 
 	grunt.initConfig({
 		watch: {
@@ -21,7 +20,7 @@ module.exports = function (grunt) {
 		jshint: {
 			dev: {
 				options: {
-					jshintrc: TASKS_DIR +'/.jshintrc'
+					jshintrc: '.jshintrc'
 				},
 				src: [
 					SRC_DIR + '/**/*.js'
@@ -35,11 +34,6 @@ module.exports = function (grunt) {
 		jasmine: {
 			dev: {
 				options: {
-					polyfills: [],
-					vendor: [
-						'node_modules/systemjs/dist/system.js'
-					],
-					helpers: [],
 					keepRunner: false,
 					outfile: TEST_DIR + '/test.html',
 					specs: [TEST_DIR + '/test.js']
@@ -48,9 +42,11 @@ module.exports = function (grunt) {
 		},
 		targethtml: {
 			build: {
-				files: {
-					'build/index.html': SRC_DIR + '/index.html'
-				}
+				files: (function() {
+					var config = {};
+					config[BUILD_DIR + '/index.html'] = SRC_DIR + '/index.html'
+					return config;
+				}())
 			}
 		},
 		systemjs: {
@@ -59,8 +55,9 @@ module.exports = function (grunt) {
 				dest: BUILD_DIR + '/build.js',
 				options: {
 					baseURL: SRC_DIR,
-					type: 'sfx', //sfx, bundle
-					format: 'global',
+					config: 'system.config.js',
+					type: 'build', //build, bundle
+					format: 'umd',
 					minify: true,
 					mangle: true,
 					sourceMaps: true
@@ -71,8 +68,10 @@ module.exports = function (grunt) {
 				dest: TEST_DIR + '/test.js',
 				options: {
 					baseURL: './',
-					type: 'sfx', //sfx, bundle
-					format: 'global'
+					config: 'system.config.js',
+					type: 'build', //build, bundle
+					format: 'umd',
+					minify: false
 				}
 			}
 		}
@@ -83,7 +82,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-targethtml');
-	grunt.loadTasks(TASKS_DIR + '/grunt-systemjs-bundler/tasks');
+	grunt.loadNpmTasks('grunt-systemjs-bundler');
 
 	grunt.registerTask('live', ['watch']);
 	grunt.registerTask('code', ['jshint:dev']);
