@@ -107,7 +107,7 @@ describe('Module "car"', function () {
 		})
 	})
 
-	describe('when drived', function () {
+	describe('when driven', function () {
 		afterEach(function () {
 			car.speed = 0
 			car.seats = 8
