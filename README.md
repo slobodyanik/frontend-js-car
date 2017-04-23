@@ -20,23 +20,28 @@
 
 Например, чтобы посадить двух пассажиров
 
-	car.put();
-	car.put();
-	//пассажиры `car.passengers` стали
-	[true, true]
+```js
+car.put();
+car.put();
+//пассажиры `car.passengers` стали
+[true, true]
+```
 
 После этого высадить одного пассажира
 
-	car.land();
-	//пассажиры `car.passengers` стали
-	[true]
-	
+```js
+car.land();
+//пассажиры `car.passengers` стали
+[true]
+```
+
 Чтобы машина поехала
 
-	car.drive(80);
-	//скорость car.speed стала
-	80
-
+```js
+car.drive(80);
+//скорость car.speed стала
+80
+```
 ### Требуемые значения по умолчанию:
 
 - `color` равно "white", 
