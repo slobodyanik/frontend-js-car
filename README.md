@@ -65,7 +65,8 @@
 - JavaScript object notation;
 - роль `this` в JavaScript;
 - добавление и удалание элементов массива;
-- присвоение значений по умолчанию.
+- присвоение значений по умолчанию;
+- ES6 модули.
 
 # Запуск и настройка проекта
 Информация по настройке проекта находится в файле [HELP.md](https://github.com/fabrikaodua/frontend-js-car/blob/master/HELP.md)
