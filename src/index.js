@@ -1,3 +1,3 @@
-﻿const car = require('./js/car.js');
+﻿import car from './js/car';
 
 console.log(car);
