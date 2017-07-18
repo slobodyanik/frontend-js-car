@@ -3,22 +3,23 @@
 	"private": true,
 	"description": "Create a car object",
 	"author": "Constantine Genchevsky <const.gen@gmail.com>",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"main": "src/index.js",
 	"scripts": {
 		"start": "neutrino start",
 		"build": "neutrino build",
 		"test": "neutrino test --watch",
-		"coverage": "neutrino test --coverage"
+		"coverage": "neutrino test --coverage",
+		"lint": "eslint --ext .js src/"
 	},
 	"neutrino": {
 		"use": [
-			"fabrika-neutrino-preset"
+			"neutrino-preset-fabrika"
 		]
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"neutrino-preset-fabrika": "^1.0.0"
+		"neutrino-preset-fabrika": "^1.1.0"
 	},
 	"engines": {
 		"node": ">=6.9.0",

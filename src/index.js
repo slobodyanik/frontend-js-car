@@ -1,3 +1,3 @@
-﻿import car from './js/car';
+import car from './js/car';
 
 console.log(car);
