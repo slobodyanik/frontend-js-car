@@ -14,13 +14,20 @@ function lendingPassenger() {
 }
 
 function updateSpeed(newSpeed) {
+	if (this.passengers[0] === undefined) {
+		return;
+	}
+
+	this.speed = this.defaultSpeed;
+
 	if (newSpeed >= this.maxSpeed) {
 		this.speed = this.maxSpeed;
 	}
-	if (this.speed < this.maxSpeed) {
+	if (newSpeed < this.maxSpeed) {
 		this.speed = newSpeed;
 	}
-	this.speed = newSpeed;
+
+
 }
 
 export default {
